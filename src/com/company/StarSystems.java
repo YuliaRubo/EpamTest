@@ -16,7 +16,8 @@ public class StarSystems {
     }
 
 
-
+public Integer massAll(){
+    starSystems}
 
     public void setName(String name) {
         this.name = name;
