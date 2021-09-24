@@ -31,4 +31,7 @@ public class Star {
         this.mass = mass;
     }
 
+    public void setPlanet(List<Planet> planet) {
+        this.planet = planet;
+    }
 }

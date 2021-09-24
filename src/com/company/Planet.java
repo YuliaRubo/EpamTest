@@ -22,4 +22,16 @@ public class Planet {
                 ", mass=" + mass +
                 '}';
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMass(int mass) {
+        this.mass = mass;
+    }
+
+    public void setSatellite(List<Satellite> satellite) {
+        this.satellite = satellite;
+    }
 }
