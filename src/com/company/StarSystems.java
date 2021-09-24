@@ -15,9 +15,10 @@ public class StarSystems {
         return name;
     }
 
+    public void getStarSystems() {
+        System.out.println("Масса"+ StarSystems);;
 
-public Integer massAll(){
-    starSystems}
+    }
 
     public void setName(String name) {
         this.name = name;
