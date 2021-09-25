@@ -6,6 +6,10 @@ public class StarSystem {
     private String name;
     private List<Star> star;
 
+    public StarSystem() {
+
+    }
+
     public void setStar(List<Star> star) {
         this.star = star;
     }
@@ -17,6 +21,10 @@ public class StarSystem {
     public StarSystem(String name, List<Star> star) {
         this.name = name;
         this.star = star;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

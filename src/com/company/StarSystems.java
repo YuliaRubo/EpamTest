@@ -23,13 +23,13 @@ public class StarSystems {
     }
 
     public void getStarSystems() {
-        System.out.println("Масса"+ StarSystems);;
 
     }
 
     public void setName(String name) {
         this.name = name;
     }
+
 
 
 }
