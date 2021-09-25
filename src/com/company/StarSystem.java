@@ -23,7 +23,7 @@ public class StarSystem {
     public String toString() {
         return "StarSystem{" +
                 "name='" + name + '\'' +
+                ", star=" + star +
                 '}';
     }
-
 }

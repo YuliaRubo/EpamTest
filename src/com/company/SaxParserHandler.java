@@ -123,14 +123,15 @@ public class SaxParserHandler extends DefaultHandler {
                 nameSt = new String(ch, start, length);
             }else if(currentTagName.equals(TAG_MASS)) {
                 massSt = Integer.valueOf(new String(ch, start, length));
-
-
         }
 
 
         }
+
+    }
     }
 
 
-}
+
+
 

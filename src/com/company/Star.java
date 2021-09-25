@@ -11,7 +11,8 @@ public class Star {
     public String toString() {
         return "Star{" +
                 "name='" + name + '\'' +
-                "mass='" + mass + '\'' +
+                ", mass=" + mass +
+                ", planet=" + planet +
                 '}';
     }
 

@@ -6,6 +6,13 @@ public class StarSystems {
     private String name;
     private List<StarSystem> StarSystems;
 
+    @Override
+    public String toString() {
+        return "StarSystems{" +
+                "name='" + name + '\'' +
+                ", StarSystems=" + StarSystems +
+                '}';
+    }
 
     public void setStarSystems(List<StarSystem> starSystems) {
         StarSystems = starSystems;
@@ -23,4 +30,6 @@ public class StarSystems {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

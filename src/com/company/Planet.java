@@ -20,8 +20,10 @@ public class Planet {
         return "Planet{" +
                 "name='" + name + '\'' +
                 ", mass=" + mass +
+                ", satellite=" + satellite +
                 '}';
     }
+
 
     public void setName(String name) {
         this.name = name;
