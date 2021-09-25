@@ -20,7 +20,7 @@ public class SaxParserHandler extends DefaultHandler {
     private static final String TAG_SATELLITE = "satellite";
 
 
-    StarSystems starSystems = new StarSystems();
+    private StarSystems starSystems = new StarSystems();
     List<StarSystem> starSystemsList = new ArrayList<>();
     Star stars = new Star();
     List<Star> starsList = new ArrayList<>();
@@ -47,6 +47,10 @@ public class SaxParserHandler extends DefaultHandler {
     private String nameSalt;
     private int massSalt;
 
+    public StarSystems getStarSystems(){
+        return starSystems;
+    }
+
     @Override
     public void startDocument() throws SAXException {
 //        System.out.println("Start");
@@ -54,7 +58,7 @@ public class SaxParserHandler extends DefaultHandler {
 
     @Override
     public void endDocument() throws SAXException {
-//        System.out.println("End");
+//      System.out.println("End document" + planetList.size());
         starSystems.setStarSystems(starSystemsList);
     }
 
@@ -75,14 +79,15 @@ public class SaxParserHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-//        System.out.println("End Element "+qName);
-        if (currentTagName != null){
-            if (currentTagName.equals(TAG_STAR_SYSTEM)){
+       System.out.println("End Element "+qName);
+//        if (currentTagName != null) {
+            if (qName .equals(TAG_STAR_SYSTEM)) {
+                System.out.println("aaa "+qName);
                 isStarSystem = false;
                 StarSystem starSystem = new StarSystem(nameStSm, starsList);
                 starSystemsList.add(starSystem);
                 starsList.clear();
-            }else if(currentTagName.equals(TAG_STAR)){
+            } else if (qName.equals(TAG_STAR)) {
                 isStar = false;
                 Star star = new Star();
                 star.setName(nameSt);
@@ -90,7 +95,7 @@ public class SaxParserHandler extends DefaultHandler {
                 star.setPlanet(planetList);
                 starsList.add(star);
                 planetList.clear();
-            }else if(currentTagName.equals(TAG_PLANET)){
+            } else if (qName.equals(TAG_PLANET)) {
                 isPlanet = false;
                 Planet planet = new Planet();
                 planet.setName(namePl);
@@ -98,7 +103,7 @@ public class SaxParserHandler extends DefaultHandler {
                 planet.setSatellite(satellitesList);
                 planetList.add(planet);
                 satellitesList.clear();
-            }else if(currentTagName.equals(TAG_SATELLITE)){
+            } else if (qName.equals(TAG_SATELLITE)) {
                 isSatellite = false;
                 Satellite satellite = new Satellite();
                 satellite.setName(nameSalt);
@@ -106,11 +111,11 @@ public class SaxParserHandler extends DefaultHandler {
                 satellitesList.add(satellite);
 
             }
+
+            currentTagName = null;
         }
-        currentTagName = null;
-    }
 
-
+//    }
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
@@ -118,7 +123,7 @@ public class SaxParserHandler extends DefaultHandler {
             return;
         }else if(isStarSystem&&!isStar&&!isPlanet&&!isSatellite&&currentTagName.equals(TAG_NAME)){
            nameStSm = new String(ch, start, length);
-        }else if(isStarSystem&&isStar&&!isPlanet&&!isSatellite) {
+        }else if(!isStarSystem&&!isStar&&!isPlanet&&!isSatellite) {
             if(currentTagName.equals(TAG_NAME)) {
                 nameSt = new String(ch, start, length);
             }else if(currentTagName.equals(TAG_MASS)) {
@@ -128,8 +133,8 @@ public class SaxParserHandler extends DefaultHandler {
 
         }
 
-    }
-    }
+    }}
+
 
 
 

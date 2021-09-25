@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class SaxMyParser {
-    public StarSystems parse(){
+    public StarSystems parse() {
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SaxParserHandler handler = new SaxParserHandler();
@@ -18,7 +18,7 @@ public class SaxMyParser {
         try {
             parser = factory.newSAXParser();
         } catch (Exception e) {
-            System.out.println("open sax parser error" +e.toString());
+            System.out.println("open sax parser error" + e.toString());
             return null;
         }
 
@@ -26,13 +26,13 @@ public class SaxMyParser {
         try {
             parser.parse(file, handler);
         } catch (SAXException e) {
-            System.out.println("sax parsering error" +e.toString());
+            System.out.println("sax parsering error" + e.toString());
             return null;
         } catch (IOException e) {
-            System.out.println("IO parsering error" +e.toString());
+            System.out.println("IO parsering error" + e.toString());
             return null;
         }
 
-        return handler.starSystems;
+        return handler.getStarSystems();
     }
 }
