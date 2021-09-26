@@ -9,10 +9,6 @@ import java.util.ArrayList;
 
 public class SaxParserHandler extends DefaultHandler {
 
-//    private static final String TAG_NAME_MAIN = "name";
-//    private static final String TAG_NAME_MAIN_ONE = "name";
-//    private static final String  TAG_NAME_MAIN_TWO ="name";
-//    private static final String  TAG_NAME_MAIN_TREE="name";
     private static final String TAG_NAME = "name";
     private static final String TAG_MASS = "mass";
     private static final String TAG_STAR_SYSTEM = "starsystem";
@@ -35,8 +31,6 @@ public class SaxParserHandler extends DefaultHandler {
     List<Satellite> satellitesList = new ArrayList<>();
 
 
-
-
     private String currentTagName;
     private boolean isStarSystem = false;
     private boolean isStars = false;
@@ -45,17 +39,6 @@ public class SaxParserHandler extends DefaultHandler {
     private boolean isPlanet = false;
     private boolean isSatellites = false;
     private boolean isSatellite = false;
-
-//    private String nameStSm;
-
-//    private String nameSt;
-//    private int massSt;
-
-//    private String namePl;
-//    private int massPl;
-
-//    private String nameSalt;
-//    private int massSalt;
 
     public StarSystems getStarSystems() { return starSystems; }
 
@@ -68,7 +51,6 @@ public class SaxParserHandler extends DefaultHandler {
     public void endDocument() throws SAXException {
 
         starSystems.setStarSystems(starSystemsList);
-//        System.out.println( "Звезда:" + starsList.size() + " " + "Планет:" + planetList.size()+ " "+ " " + "Cпутник: " + satellitesList.size());
 
     }
 
@@ -97,7 +79,6 @@ public class SaxParserHandler extends DefaultHandler {
             isSatellite = true;
         }
     }
-
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
@@ -130,10 +111,7 @@ public class SaxParserHandler extends DefaultHandler {
 
     }
 
-
-
-
-    @Override
+  @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         if(currentTagName==null){
             return;
@@ -156,15 +134,6 @@ public class SaxParserHandler extends DefaultHandler {
 
     }
 
-//    @Override
-//        public void characters(char[] ch, int start, int length) throws SAXException {
-//        if(currentTagName==null){
-////            return;
-//    }else if(!isStar&&currentTagName.equals(TAG_NAME_MAIN)){
-//            nameStSm = new String(ch, start, length);
-//        }
-//
-//    }
 }
 
 
