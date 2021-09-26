@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class StarSystem {
     private String name;
@@ -30,8 +31,13 @@ public class StarSystem {
     @Override
     public String toString() {
         return "StarSystem{" +
-                "name='" + name + '\'' +
+                "name='" + name + '\n' +
                 ", star=" + star +
                 '}';
     }
+
+    public List<Star> getStars() {
+        return star;
+    }
+
 }

@@ -25,8 +25,9 @@ public class Satellite {
     @Override
     public String toString() {
         return "Satellite{" +
-                "name='" + name + '\'' +
+                "name='" + name + '\n' +
                 ", mass=" + mass +
                 '}';
     }
+
 }

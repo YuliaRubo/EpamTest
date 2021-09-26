@@ -4,7 +4,7 @@
         <name>solar system</name>
         <stars>
             <star>
-                <name>star Sun</name>
+                <name>Sun</name>
                 <mass>2000000</mass>
                 <planets>
                     <planet>

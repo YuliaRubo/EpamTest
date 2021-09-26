@@ -18,7 +18,7 @@ public class Planet {
     @Override
     public String toString() {
         return "Planet{" +
-                "name='" + name + '\'' +
+                "name='" + name + '\n' +
                 ", mass=" + mass +
                 ", satellite=" + satellite +
                 '}';
@@ -35,5 +35,9 @@ public class Planet {
 
     public void setSatellite(List<Satellite> satellite) {
         this.satellite = satellite;
+    }
+
+    public List<Satellite> getSatellites() {
+        return satellite;
     }
 }

@@ -10,7 +10,7 @@ public class Star {
     @Override
     public String toString() {
         return "Star{" +
-                "name='" + name + '\'' +
+                "name='" + name + '\n' +
                 ", mass=" + mass +
                 ", planet=" + planet +
                 '}';
@@ -34,5 +34,9 @@ public class Star {
 
     public void setPlanet(List<Planet> planet) {
         this.planet = planet;
+    }
+
+    public List<Planet> getPlanets() {
+        return planet;
     }
 }
