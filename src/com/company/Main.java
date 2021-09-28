@@ -50,7 +50,7 @@ public class Main {
 //
       System.out.println("Amount - "+sizeBodiesSystem+"; total mass - "+massBodiesSystem);
 
-//        StaxWriteDemo staxWriteDemo = new StaxWriteDemo();
+
            String amount =  Integer.toString(sizeBodiesSystem);
            String massTotal =  Integer.toString(massBodiesSystem);
 
